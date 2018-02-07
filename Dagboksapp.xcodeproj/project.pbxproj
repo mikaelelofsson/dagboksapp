@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11509CC446B880472B9F3883 /* Pods_Dagboksapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C76398E4378FE95DA7D5ECC /* Pods_Dagboksapp.framework */; };
+		3F121D36202329E100C627D3 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F121D35202329E100C627D3 /* CacheManager.swift */; };
+		3F3CC11420208F5E00BD651C /* CreateEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3CC11320208F5E00BD651C /* CreateEntryController.swift */; };
+		3F3CC1162020A21D00BD651C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F3CC1152020A21D00BD651C /* GoogleService-Info.plist */; };
+		3F4A5864201B2AF800CE1787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A5863201B2AF800CE1787 /* AppDelegate.swift */; };
+		3F4A5869201B2AF800CE1787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4A5867201B2AF800CE1787 /* Main.storyboard */; };
+		3F4A586B201B2AF800CE1787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4A586A201B2AF800CE1787 /* Assets.xcassets */; };
+		3F4A586E201B2AF800CE1787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4A586C201B2AF800CE1787 /* LaunchScreen.storyboard */; };
+		3F4A5876201B367B00CE1787 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A5875201B367B00CE1787 /* DiaryTableViewController.swift */; };
+		3F4A5878201B402E00CE1787 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A5877201B402E00CE1787 /* DiaryTableViewCell.swift */; };
+		3F59EE51202B0366008BE130 /* AudioRecordingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F59EE50202B0366008BE130 /* AudioRecordingController.swift */; };
+		3F88E949201F33EE003ACB32 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88E948201F33EE003ACB32 /* DetailViewController.swift */; };
+		3F88E94B201F5438003ACB32 /* DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88E94A201F5438003ACB32 /* DiaryEntry.swift */; };
+		3F88E95D201F6002003ACB32 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F88E951201F5FFE003ACB32 /* Roboto-Thin.ttf */; };
+		3F88E95E201F6002003ACB32 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F88E952201F5FFE003ACB32 /* Roboto-BoldItalic.ttf */; };
+		3F88E95F201F6002003ACB32 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F88E953201F5FFE003ACB32 /* Roboto-Medium.ttf */; };
+		3F88E960201F6002003ACB32 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F88E954201F5FFF003ACB32 /* Roboto-ThinItalic.ttf */; };
+		3F88E961201F6002003ACB32 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F88E955201F5FFF003ACB32 /* Roboto-Bold.ttf */; };
+		3F88E962201F6002003ACB32 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F88E956201F5FFF003ACB32 /* Roboto-Italic.ttf */; };
+		3F88E963201F6002003ACB32 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F88E957201F6000003ACB32 /* Roboto-Black.ttf */; };
+		3F88E964201F6002003ACB32 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F88E958201F6000003ACB32 /* Roboto-LightItalic.ttf */; };
+		3F88E965201F6002003ACB32 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F88E959201F6001003ACB32 /* Roboto-BlackItalic.ttf */; };
+		3F88E966201F6002003ACB32 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F88E95A201F6001003ACB32 /* Roboto-Light.ttf */; };
+		3F88E967201F6002003ACB32 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F88E95B201F6001003ACB32 /* Roboto-MediumItalic.ttf */; };
+		3F88E968201F6002003ACB32 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F88E95C201F6002003ACB32 /* Roboto-Regular.ttf */; };
+		3F88E96A201F65C6003ACB32 /* DiaryDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88E969201F65C6003ACB32 /* DiaryDetailHeaderView.swift */; };
+		3F88E96C201F6C7E003ACB32 /* DiaryDetailSubheadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88E96B201F6C7E003ACB32 /* DiaryDetailSubheadCell.swift */; };
+		3F88E96E201F6DF2003ACB32 /* DiaryDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88E96D201F6DF2003ACB32 /* DiaryDetailTextCell.swift */; };
+		3FC2B37F2020C73F0007A84E /* VideoRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2B37E2020C73F0007A84E /* VideoRecordController.swift */; };
+		3FCED6C22021E4A000879372 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED6C12021E4A000879372 /* PostService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		19BEF81053AA3E866F4458B4 /* Pods-Dagboksapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dagboksapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dagboksapp/Pods-Dagboksapp.release.xcconfig"; sourceTree = "<group>"; };
+		3F121D35202329E100C627D3 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		3F3CC11320208F5E00BD651C /* CreateEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEntryController.swift; sourceTree = "<group>"; };
+		3F3CC1152020A21D00BD651C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3F4A5860201B2AF800CE1787 /* Dagboksapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dagboksapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F4A5863201B2AF800CE1787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F4A5868201B2AF800CE1787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F4A586A201B2AF800CE1787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F4A586D201B2AF800CE1787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F4A586F201B2AF800CE1787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F4A5875201B367B00CE1787 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
+		3F4A5877201B402E00CE1787 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
+		3F59EE50202B0366008BE130 /* AudioRecordingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingController.swift; sourceTree = "<group>"; };
+		3F88E948201F33EE003ACB32 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3F88E94A201F5438003ACB32 /* DiaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntry.swift; sourceTree = "<group>"; };
+		3F88E951201F5FFE003ACB32 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		3F88E952201F5FFE003ACB32 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		3F88E953201F5FFE003ACB32 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		3F88E954201F5FFF003ACB32 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		3F88E955201F5FFF003ACB32 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		3F88E956201F5FFF003ACB32 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		3F88E957201F6000003ACB32 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		3F88E958201F6000003ACB32 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		3F88E959201F6001003ACB32 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		3F88E95A201F6001003ACB32 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		3F88E95B201F6001003ACB32 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		3F88E95C201F6002003ACB32 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		3F88E969201F65C6003ACB32 /* DiaryDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailHeaderView.swift; sourceTree = "<group>"; };
+		3F88E96B201F6C7E003ACB32 /* DiaryDetailSubheadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailSubheadCell.swift; sourceTree = "<group>"; };
+		3F88E96D201F6DF2003ACB32 /* DiaryDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailTextCell.swift; sourceTree = "<group>"; };
+		3FC2B37E2020C73F0007A84E /* VideoRecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoRecordController.swift; sourceTree = "<group>"; };
+		3FCED6C12021E4A000879372 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		6C76398E4378FE95DA7D5ECC /* Pods_Dagboksapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dagboksapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93F11EA02288B6D9E0975F13 /* Pods-Dagboksapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dagboksapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dagboksapp/Pods-Dagboksapp.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F4A585D201B2AF800CE1787 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11509CC446B880472B9F3883 /* Pods_Dagboksapp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09A3C0C3BDD7026B5867682E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C76398E4378FE95DA7D5ECC /* Pods_Dagboksapp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DE24500686AEC814E7AB5B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93F11EA02288B6D9E0975F13 /* Pods-Dagboksapp.debug.xcconfig */,
+				19BEF81053AA3E866F4458B4 /* Pods-Dagboksapp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3F4A5857201B2AF800CE1787 = {
+			isa = PBXGroup;
+			children = (
+				3F4A5862201B2AF800CE1787 /* Dagboksapp */,
+				3F4A5861201B2AF800CE1787 /* Products */,
+				1DE24500686AEC814E7AB5B1 /* Pods */,
+				09A3C0C3BDD7026B5867682E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F4A5861201B2AF800CE1787 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F4A5860201B2AF800CE1787 /* Dagboksapp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F4A5862201B2AF800CE1787 /* Dagboksapp */ = {
+			isa = PBXGroup;
+			children = (
+				3FCED6BE2021E46100879372 /* Service */,
+				3F88E94F201F5FA0003ACB32 /* Resources */,
+				3F88E94E201F5C1F003ACB32 /* View */,
+				3F88E94D201F5C0F003ACB32 /* Model */,
+				3F88E94C201F5BE9003ACB32 /* Controller */,
+				3F4A5863201B2AF800CE1787 /* AppDelegate.swift */,
+				3F4A5867201B2AF800CE1787 /* Main.storyboard */,
+				3F4A586A201B2AF800CE1787 /* Assets.xcassets */,
+				3F4A586C201B2AF800CE1787 /* LaunchScreen.storyboard */,
+				3F4A586F201B2AF800CE1787 /* Info.plist */,
+				3F3CC1152020A21D00BD651C /* GoogleService-Info.plist */,
+			);
+			path = Dagboksapp;
+			sourceTree = "<group>";
+		};
+		3F88E94C201F5BE9003ACB32 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F4A5875201B367B00CE1787 /* DiaryTableViewController.swift */,
+				3F88E948201F33EE003ACB32 /* DetailViewController.swift */,
+				3F3CC11320208F5E00BD651C /* CreateEntryController.swift */,
+				3FC2B37E2020C73F0007A84E /* VideoRecordController.swift */,
+				3F59EE50202B0366008BE130 /* AudioRecordingController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F88E94D201F5C0F003ACB32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F88E94A201F5438003ACB32 /* DiaryEntry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F88E94E201F5C1F003ACB32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F4A5877201B402E00CE1787 /* DiaryTableViewCell.swift */,
+				3F88E969201F65C6003ACB32 /* DiaryDetailHeaderView.swift */,
+				3F88E96B201F6C7E003ACB32 /* DiaryDetailSubheadCell.swift */,
+				3F88E96D201F6DF2003ACB32 /* DiaryDetailTextCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3F88E94F201F5FA0003ACB32 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F88E950201F5FA7003ACB32 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3F88E950201F5FA7003ACB32 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3F88E957201F6000003ACB32 /* Roboto-Black.ttf */,
+				3F88E959201F6001003ACB32 /* Roboto-BlackItalic.ttf */,
+				3F88E955201F5FFF003ACB32 /* Roboto-Bold.ttf */,
+				3F88E952201F5FFE003ACB32 /* Roboto-BoldItalic.ttf */,
+				3F88E956201F5FFF003ACB32 /* Roboto-Italic.ttf */,
+				3F88E95A201F6001003ACB32 /* Roboto-Light.ttf */,
+				3F88E958201F6000003ACB32 /* Roboto-LightItalic.ttf */,
+				3F88E953201F5FFE003ACB32 /* Roboto-Medium.ttf */,
+				3F88E95B201F6001003ACB32 /* Roboto-MediumItalic.ttf */,
+				3F88E95C201F6002003ACB32 /* Roboto-Regular.ttf */,
+				3F88E951201F5FFE003ACB32 /* Roboto-Thin.ttf */,
+				3F88E954201F5FFF003ACB32 /* Roboto-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3FCED6BE2021E46100879372 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3FCED6C12021E4A000879372 /* PostService.swift */,
+				3F121D35202329E100C627D3 /* CacheManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F4A585F201B2AF800CE1787 /* Dagboksapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F4A5872201B2AF800CE1787 /* Build configuration list for PBXNativeTarget "Dagboksapp" */;
+			buildPhases = (
+				C8AD932C7D9A371BF085AD2B /* [CP] Check Pods Manifest.lock */,
+				3F4A585C201B2AF800CE1787 /* Sources */,
+				3F4A585D201B2AF800CE1787 /* Frameworks */,
+				3F4A585E201B2AF800CE1787 /* Resources */,
+				CA6B792C44339D2914F6FABB /* [CP] Embed Pods Frameworks */,
+				A05E05376C963DF24D7133B1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dagboksapp;
+			productName = Dagboksapp;
+			productReference = 3F4A5860201B2AF800CE1787 /* Dagboksapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F4A5858201B2AF800CE1787 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Mikael Elofsson";
+				TargetAttributes = {
+					3F4A585F201B2AF800CE1787 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3F4A585B201B2AF800CE1787 /* Build configuration list for PBXProject "Dagboksapp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F4A5857201B2AF800CE1787;
+			productRefGroup = 3F4A5861201B2AF800CE1787 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F4A585F201B2AF800CE1787 /* Dagboksapp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F4A585E201B2AF800CE1787 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F88E95D201F6002003ACB32 /* Roboto-Thin.ttf in Resources */,
+				3F88E964201F6002003ACB32 /* Roboto-LightItalic.ttf in Resources */,
+				3F88E962201F6002003ACB32 /* Roboto-Italic.ttf in Resources */,
+				3F4A586E201B2AF800CE1787 /* LaunchScreen.storyboard in Resources */,
+				3F88E967201F6002003ACB32 /* Roboto-MediumItalic.ttf in Resources */,
+				3F88E95F201F6002003ACB32 /* Roboto-Medium.ttf in Resources */,
+				3F88E960201F6002003ACB32 /* Roboto-ThinItalic.ttf in Resources */,
+				3F4A586B201B2AF800CE1787 /* Assets.xcassets in Resources */,
+				3F88E965201F6002003ACB32 /* Roboto-BlackItalic.ttf in Resources */,
+				3F3CC1162020A21D00BD651C /* GoogleService-Info.plist in Resources */,
+				3F88E95E201F6002003ACB32 /* Roboto-BoldItalic.ttf in Resources */,
+				3F88E966201F6002003ACB32 /* Roboto-Light.ttf in Resources */,
+				3F88E963201F6002003ACB32 /* Roboto-Black.ttf in Resources */,
+				3F88E968201F6002003ACB32 /* Roboto-Regular.ttf in Resources */,
+				3F88E961201F6002003ACB32 /* Roboto-Bold.ttf in Resources */,
+				3F4A5869201B2AF800CE1787 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A05E05376C963DF24D7133B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dagboksapp/Pods-Dagboksapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8AD932C7D9A371BF085AD2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dagboksapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA6B792C44339D2914F6FABB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dagboksapp/Pods-Dagboksapp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dagboksapp/Pods-Dagboksapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F4A585C201B2AF800CE1787 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F59EE51202B0366008BE130 /* AudioRecordingController.swift in Sources */,
+				3F4A5864201B2AF800CE1787 /* AppDelegate.swift in Sources */,
+				3F88E94B201F5438003ACB32 /* DiaryEntry.swift in Sources */,
+				3F4A5876201B367B00CE1787 /* DiaryTableViewController.swift in Sources */,
+				3F4A5878201B402E00CE1787 /* DiaryTableViewCell.swift in Sources */,
+				3F121D36202329E100C627D3 /* CacheManager.swift in Sources */,
+				3FC2B37F2020C73F0007A84E /* VideoRecordController.swift in Sources */,
+				3F3CC11420208F5E00BD651C /* CreateEntryController.swift in Sources */,
+				3FCED6C22021E4A000879372 /* PostService.swift in Sources */,
+				3F88E96A201F65C6003ACB32 /* DiaryDetailHeaderView.swift in Sources */,
+				3F88E96E201F6DF2003ACB32 /* DiaryDetailTextCell.swift in Sources */,
+				3F88E949201F33EE003ACB32 /* DetailViewController.swift in Sources */,
+				3F88E96C201F6C7E003ACB32 /* DiaryDetailSubheadCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3F4A5867201B2AF800CE1787 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F4A5868201B2AF800CE1787 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F4A586C201B2AF800CE1787 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F4A586D201B2AF800CE1787 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F4A5870201B2AF800CE1787 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3F4A5871201B2AF800CE1787 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F4A5873201B2AF800CE1787 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93F11EA02288B6D9E0975F13 /* Pods-Dagboksapp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V72YN488QK;
+				INFOPLIST_FILE = Dagboksapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.mikaelelofsson.Dagboksapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F4A5874201B2AF800CE1787 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19BEF81053AA3E866F4458B4 /* Pods-Dagboksapp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V72YN488QK;
+				INFOPLIST_FILE = Dagboksapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.mikaelelofsson.Dagboksapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F4A585B201B2AF800CE1787 /* Build configuration list for PBXProject "Dagboksapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F4A5870201B2AF800CE1787 /* Debug */,
+				3F4A5871201B2AF800CE1787 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F4A5872201B2AF800CE1787 /* Build configuration list for PBXNativeTarget "Dagboksapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F4A5873201B2AF800CE1787 /* Debug */,
+				3F4A5874201B2AF800CE1787 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F4A5858201B2AF800CE1787 /* Project object */;
+}
