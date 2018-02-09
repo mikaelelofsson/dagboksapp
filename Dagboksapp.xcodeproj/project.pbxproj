@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11509CC446B880472B9F3883 /* Pods_Dagboksapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C76398E4378FE95DA7D5ECC /* Pods_Dagboksapp.framework */; };
 		3F121D36202329E100C627D3 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F121D35202329E100C627D3 /* CacheManager.swift */; };
 		3F3CC11420208F5E00BD651C /* CreateEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3CC11320208F5E00BD651C /* CreateEntryController.swift */; };
 		3F3CC1162020A21D00BD651C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F3CC1152020A21D00BD651C /* GoogleService-Info.plist */; };
@@ -37,6 +36,7 @@
 		3F88E96E201F6DF2003ACB32 /* DiaryDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88E96D201F6DF2003ACB32 /* DiaryDetailTextCell.swift */; };
 		3FC2B37F2020C73F0007A84E /* VideoRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2B37E2020C73F0007A84E /* VideoRecordController.swift */; };
 		3FCED6C22021E4A000879372 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED6C12021E4A000879372 /* PostService.swift */; };
+		3FF0AFD6202C8622003420C2 /* Pods_Dagboksapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF0AFD5202C8622003420C2 /* Pods_Dagboksapp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +72,7 @@
 		3F88E96D201F6DF2003ACB32 /* DiaryDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailTextCell.swift; sourceTree = "<group>"; };
 		3FC2B37E2020C73F0007A84E /* VideoRecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoRecordController.swift; sourceTree = "<group>"; };
 		3FCED6C12021E4A000879372 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
-		6C76398E4378FE95DA7D5ECC /* Pods_Dagboksapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dagboksapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FF0AFD5202C8622003420C2 /* Pods_Dagboksapp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pods_Dagboksapp.framework; sourceTree = "<group>"; };
 		93F11EA02288B6D9E0975F13 /* Pods-Dagboksapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dagboksapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dagboksapp/Pods-Dagboksapp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11509CC446B880472B9F3883 /* Pods_Dagboksapp.framework in Frameworks */,
+				3FF0AFD6202C8622003420C2 /* Pods_Dagboksapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 		09A3C0C3BDD7026B5867682E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6C76398E4378FE95DA7D5ECC /* Pods_Dagboksapp.framework */,
+				3FF0AFD5202C8622003420C2 /* Pods_Dagboksapp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -426,6 +426,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -442,7 +443,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -483,6 +484,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -493,7 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -508,9 +510,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V72YN488QK;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Dagboksapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				PRODUCT_BUNDLE_IDENTIFIER = se.mikaelelofsson.Dagboksapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -525,9 +531,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V72YN488QK;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Dagboksapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				PRODUCT_BUNDLE_IDENTIFIER = se.mikaelelofsson.Dagboksapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -68,14 +68,14 @@ class VideoRecordController: UIViewController {
         captureSession.sessionPreset = AVCaptureSession.Preset.high
         
         // Get the front and back-facing camera for taking photos
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
-        
+       /* let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
+ 
         guard let device = deviceDiscoverySession.devices.first else {
             print("Failed to get the camera device")
             return
         }
-        
-        currentDevice = device
+ 
+        currentDevice = device*/
         
         // Get the input data source
         guard let captureDeviceInput = try? AVCaptureDeviceInput(device: currentDevice) else {

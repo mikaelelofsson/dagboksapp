@@ -132,7 +132,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="nqd-ns-2hT">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nqd-ns-2hT">
                                 <rect key="frame" x="10" y="74" width="355" height="593"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjD-jN-cCR">
@@ -145,22 +145,29 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rSr-La-ga7">
-                                                <rect key="frame" x="79" y="0.0" width="231" height="45"/>
+                                                <rect key="frame" x="79" y="0.0" width="186" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlQ-jC-mT8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="231" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="186" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbj-HU-aQf">
-                                                        <rect key="frame" x="0.0" y="20.5" width="231" height="24.5"/>
+                                                        <rect key="frame" x="0.0" y="20.5" width="186" height="24.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZa-cG-9bh">
+                                                <rect key="frame" x="265" y="0.0" width="45" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ZZa-cG-9bh" secondAttribute="height" multiplier="1:1" id="Bh7-J0-ica"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="camera"/>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbx-Lb-qbE">
                                                 <rect key="frame" x="310" y="0.0" width="45" height="45"/>
                                                 <constraints>
@@ -168,7 +175,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Button" image="recorder"/>
                                                 <connections>
-                                                    <segue destination="EYL-Z5-d6l" kind="show" id="eNe-Ju-obW"/>
+                                                    <action selector="openAudioRecorder:" destination="sHN-iz-9gE" eventType="touchUpInside" id="hSo-nF-jIR"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -177,18 +184,54 @@
                                             <constraint firstItem="rSr-La-ga7" firstAttribute="leading" secondItem="Auf-gn-Vye" secondAttribute="trailing" id="hZG-rH-lfX"/>
                                         </constraints>
                                     </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="nhjghjghj" translatesAutoresizingMaskIntoConstraints="NO" id="Zch-f4-IFp">
-                                        <rect key="frame" x="0.0" y="45" width="355" height="468"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <accessibility key="accessibilityConfiguration" hint="Skriv här"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hxJ-YQ-oJ7">
+                                        <rect key="frame" x="0.0" y="55" width="355" height="30"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dove" translatesAutoresizingMaskIntoConstraints="NO" id="b9r-sa-4RQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="b9r-sa-4RQ" secondAttribute="height" multiplier="1:1" id="Ilv-j5-Nyi"/>
+                                                    <constraint firstAttribute="width" constant="30" id="dVI-6S-S6c"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of the bird" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VY2-Ib-WqX">
+                                                <rect key="frame" x="40" y="0.0" width="315" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="MQD-kK-2cX"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1tN-tu-qrC">
+                                        <rect key="frame" x="0.0" y="95" width="355" height="408"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pen" translatesAutoresizingMaskIntoConstraints="NO" id="Iym-a5-PhU">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="92y-OC-sza"/>
+                                                    <constraint firstAttribute="width" secondItem="Iym-a5-PhU" secondAttribute="height" multiplier="1:1" id="XTc-S0-I0K"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="nhjghjghj" translatesAutoresizingMaskIntoConstraints="NO" id="Zch-f4-IFp">
+                                                <rect key="frame" x="40" y="0.0" width="315" height="408"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Skriv här"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Zch-f4-IFp" secondAttribute="bottom" id="qYg-NW-J2a"/>
+                                        </constraints>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="N6l-Sv-EQy">
                                         <rect key="frame" x="0.0" y="513" width="355" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKN-5F-abI">
-                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="q05-Ir-FTR"/>
                                                 </constraints>
@@ -197,20 +240,16 @@
                                                     <action selector="saveEntryBtn:" destination="sHN-iz-9gE" eventType="touchUpInside" id="LG2-6j-4Dc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jN-FP-FM1">
-                                                <rect key="frame" x="177.5" y="0.0" width="177.5" height="80"/>
-                                                <state key="normal" title="Kamera"/>
-                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Zch-f4-IFp" firstAttribute="leading" secondItem="nqd-ns-2hT" secondAttribute="leading" id="Fs4-eP-5FX"/>
+                                    <constraint firstAttribute="trailing" secondItem="1tN-tu-qrC" secondAttribute="trailing" id="LXA-W5-MiF"/>
+                                    <constraint firstItem="N6l-Sv-EQy" firstAttribute="top" secondItem="1tN-tu-qrC" secondAttribute="bottom" constant="10" id="MIs-PP-deQ"/>
                                     <constraint firstItem="N6l-Sv-EQy" firstAttribute="leading" secondItem="nqd-ns-2hT" secondAttribute="leading" id="Tga-Mg-wix"/>
                                     <constraint firstAttribute="trailing" secondItem="N6l-Sv-EQy" secondAttribute="trailing" id="f4D-qn-ws4"/>
                                     <constraint firstAttribute="trailing" secondItem="tjD-jN-cCR" secondAttribute="trailing" id="qhL-zT-Gxe"/>
-                                    <constraint firstItem="Zch-f4-IFp" firstAttribute="top" secondItem="tjD-jN-cCR" secondAttribute="bottom" id="r8V-6l-mPt"/>
-                                    <constraint firstAttribute="trailing" secondItem="Zch-f4-IFp" secondAttribute="trailing" id="y3R-cf-qGF"/>
+                                    <constraint firstAttribute="trailing" secondItem="hxJ-YQ-oJ7" secondAttribute="trailing" id="qvu-3V-7DY"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -228,11 +267,12 @@
                         <outlet property="dayName" destination="FlQ-jC-mT8" id="p7H-C8-A0c"/>
                         <outlet property="entryTextView" destination="Zch-f4-IFp" id="aUd-I3-BoY"/>
                         <outlet property="month" destination="Mbj-HU-aQf" id="YD6-Ty-dcC"/>
+                        <segue destination="EYL-Z5-d6l" kind="show" identifier="audioRecordingSegue" id="GhR-Yf-9Zr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bOn-8N-eGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="173"/>
+            <point key="canvasLocation" x="754" y="171"/>
         </scene>
         <!--Audio Recording Controller-->
         <scene sceneID="ZGA-SS-CuD">
@@ -263,6 +303,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXK-jZ-6X9">
                                                 <rect key="frame" x="0.0" y="254.5" width="50" height="50"/>
                                                 <state key="normal" image="Play"/>
+                                                <connections>
+                                                    <action selector="play:" destination="EYL-Z5-d6l" eventType="touchUpInside" id="R9Z-sv-SJX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMj-mP-QNM">
                                                 <rect key="frame" x="75" y="234.5" width="70" height="70"/>
@@ -300,11 +343,12 @@
                         <outlet property="playButton" destination="aXK-jZ-6X9" id="tBD-rQ-xfC"/>
                         <outlet property="recordButton" destination="iMj-mP-QNM" id="dvG-ZQ-yJY"/>
                         <outlet property="stopButton" destination="R6N-Uf-XYD" id="dL3-cS-a9N"/>
+                        <outlet property="timeLabel" destination="BD9-p3-4xh" id="eGI-DG-k5V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQ4-RJ-NOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1664.8" y="167.76611694152925"/>
+            <point key="canvasLocation" x="1607" y="172"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="9fv-LI-u8L">
@@ -467,6 +511,9 @@
         <image name="Record" width="70" height="70"/>
         <image name="Stop" width="50" height="50"/>
         <image name="Wave" width="318" height="92"/>
+        <image name="camera" width="32" height="32"/>
+        <image name="dove" width="32" height="32"/>
+        <image name="pen" width="32" height="32"/>
         <image name="recorder" width="32" height="32"/>
     </resources>
 </document>
