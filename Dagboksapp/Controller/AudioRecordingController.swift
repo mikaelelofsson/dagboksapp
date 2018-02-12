@@ -150,10 +150,10 @@ class AudioRecordingController: UIViewController, UINavigationControllerDelegate
     
     //MARK: - Timer functions
     func startTimer() {
-    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {(timer) in
-        self.elapsedTimeInSecond += 1
-        self.updateTimerLabel()
-    })
+//    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {(timer) in
+//        self.elapsedTimeInSecond += 1
+//        self.updateTimerLabel()
+//    })
     }
     
     func pauseTimer(){

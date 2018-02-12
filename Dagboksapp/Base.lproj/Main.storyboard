@@ -167,6 +167,9 @@
                                                     <constraint firstAttribute="width" secondItem="ZZa-cG-9bh" secondAttribute="height" multiplier="1:1" id="Bh7-J0-ica"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="camera"/>
+                                                <connections>
+                                                    <action selector="chooseImage:" destination="sHN-iz-9gE" eventType="touchUpInside" id="YDC-cS-bVn"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbx-Lb-qbE">
                                                 <rect key="frame" x="310" y="0.0" width="45" height="45"/>
@@ -272,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bOn-8N-eGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="754" y="171"/>
+            <point key="canvasLocation" x="740" y="523"/>
         </scene>
         <!--Audio Recording Controller-->
         <scene sceneID="ZGA-SS-CuD">
@@ -348,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQ4-RJ-NOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1607" y="172"/>
+            <point key="canvasLocation" x="1650" y="186"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="9fv-LI-u8L">

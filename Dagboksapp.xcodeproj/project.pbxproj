@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0F625F20319F36001FD827 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F625E20319F36001FD827 /* CameraViewController.swift */; };
 		3F121D36202329E100C627D3 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F121D35202329E100C627D3 /* CacheManager.swift */; };
 		3F3CC11420208F5E00BD651C /* CreateEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3CC11320208F5E00BD651C /* CreateEntryController.swift */; };
 		3F3CC1162020A21D00BD651C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F3CC1152020A21D00BD651C /* GoogleService-Info.plist */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		19BEF81053AA3E866F4458B4 /* Pods-Dagboksapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dagboksapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dagboksapp/Pods-Dagboksapp.release.xcconfig"; sourceTree = "<group>"; };
+		3F0F625E20319F36001FD827 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		3F121D35202329E100C627D3 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		3F3CC11320208F5E00BD651C /* CreateEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEntryController.swift; sourceTree = "<group>"; };
 		3F3CC1152020A21D00BD651C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				3F3CC11320208F5E00BD651C /* CreateEntryController.swift */,
 				3FC2B37E2020C73F0007A84E /* VideoRecordController.swift */,
 				3F59EE50202B0366008BE130 /* AudioRecordingController.swift */,
+				3F0F625E20319F36001FD827 /* CameraViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				3FCED6C22021E4A000879372 /* PostService.swift in Sources */,
 				3F88E96A201F65C6003ACB32 /* DiaryDetailHeaderView.swift in Sources */,
 				3F88E96E201F6DF2003ACB32 /* DiaryDetailTextCell.swift in Sources */,
+				3F0F625F20319F36001FD827 /* CameraViewController.swift in Sources */,
 				3F88E949201F33EE003ACB32 /* DetailViewController.swift in Sources */,
 				3F88E96C201F6C7E003ACB32 /* DiaryDetailSubheadCell.swift in Sources */,
 			);
@@ -516,7 +520,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Dagboksapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = se.mikaelelofsson.Dagboksapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -537,7 +541,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Dagboksapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = se.mikaelelofsson.Dagboksapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

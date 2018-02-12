@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class CreateEntryController: UIViewController {
+class CreateEntryController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     var recordingName: String!
     @IBOutlet weak var dayName: UILabel!
@@ -25,6 +25,10 @@ class CreateEntryController: UIViewController {
             entryTextView.layer.borderColor = UIColor.lightGray.cgColor
         }
     }
+    
+    
+    var imageData: Data!
+    var imagePicker = UIImagePickerController()
     
     @IBOutlet weak var year: UILabel!
     var databaseRef: DatabaseReference!
@@ -72,11 +76,29 @@ class CreateEntryController: UIViewController {
     @IBAction func openAudioRecorder(_ sender: Any) {
         performSegue(withIdentifier: "audioRecordingSegue", sender: self)
     }
+    @IBAction func chooseImage(_ sender: Any) {
+        
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                imagePicker = UIImagePickerController()
+                imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
+                imagePicker.sourceType = .camera;
+                imagePicker.allowsEditing = true
+                self.present(imagePicker, animated: true, completion: nil)
+            } else {
+        
+        
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated:true, completion:nil)
+    }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "audioRecordingSegue" {
             let destination = segue.destination as! AudioRecordingController
            destination.recordingName = recordingName
         }
+        
+        
     /*
     // MARK: - Navigation
 
@@ -88,4 +110,24 @@ class CreateEntryController: UIViewController {
     */
 
 }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        var selectedImage: UIImage?
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            selectedImage = editedImage
+        } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            selectedImage = originalImage
+        }
+        imageData = UIImageJPEGRepresentation(selectedImage!, 0.8)!
+//        imageView.contentMode = .scaleAspectFit
+//        imageView.image = selectedImage!
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
 }

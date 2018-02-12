@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseCore
 
 final class PostService {
     //Mark: -Properties
