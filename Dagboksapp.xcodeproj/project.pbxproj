@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F0F625F20319F36001FD827 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F625E20319F36001FD827 /* CameraViewController.swift */; };
 		3F121D36202329E100C627D3 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F121D35202329E100C627D3 /* CacheManager.swift */; };
+		3F3CB55A2035943C0086DBAD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3CB5592035943B0086DBAD /* CoreLocation.framework */; };
 		3F3CC11420208F5E00BD651C /* CreateEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3CC11320208F5E00BD651C /* CreateEntryController.swift */; };
 		3F3CC1162020A21D00BD651C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F3CC1152020A21D00BD651C /* GoogleService-Info.plist */; };
 		3F4A5864201B2AF800CE1787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A5863201B2AF800CE1787 /* AppDelegate.swift */; };
@@ -38,12 +39,15 @@
 		3FC2B37F2020C73F0007A84E /* VideoRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2B37E2020C73F0007A84E /* VideoRecordController.swift */; };
 		3FCED6C22021E4A000879372 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED6C12021E4A000879372 /* PostService.swift */; };
 		3FF0AFD6202C8622003420C2 /* Pods_Dagboksapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF0AFD5202C8622003420C2 /* Pods_Dagboksapp.framework */; };
+		3FF5BC502036538E00F7E358 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FF5BC522036538E00F7E358 /* Localizable.strings */; };
+		3FF5BC562036539B00F7E358 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FF5BC582036539B00F7E358 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19BEF81053AA3E866F4458B4 /* Pods-Dagboksapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dagboksapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dagboksapp/Pods-Dagboksapp.release.xcconfig"; sourceTree = "<group>"; };
 		3F0F625E20319F36001FD827 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		3F121D35202329E100C627D3 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		3F3CB5592035943B0086DBAD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3F3CC11320208F5E00BD651C /* CreateEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEntryController.swift; sourceTree = "<group>"; };
 		3F3CC1152020A21D00BD651C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F4A5860201B2AF800CE1787 /* Dagboksapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dagboksapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +79,10 @@
 		3FC2B37E2020C73F0007A84E /* VideoRecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoRecordController.swift; sourceTree = "<group>"; };
 		3FCED6C12021E4A000879372 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		3FF0AFD5202C8622003420C2 /* Pods_Dagboksapp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pods_Dagboksapp.framework; sourceTree = "<group>"; };
+		3FF5BC512036538E00F7E358 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3FF5BC532036539500F7E358 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3FF5BC572036539B00F7E358 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3FF5BC592036539D00F7E358 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
 		93F11EA02288B6D9E0975F13 /* Pods-Dagboksapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dagboksapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dagboksapp/Pods-Dagboksapp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F3CB55A2035943C0086DBAD /* CoreLocation.framework in Frameworks */,
 				3FF0AFD6202C8622003420C2 /* Pods_Dagboksapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +102,7 @@
 		09A3C0C3BDD7026B5867682E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F3CB5592035943B0086DBAD /* CoreLocation.framework */,
 				3FF0AFD5202C8622003420C2 /* Pods_Dagboksapp.framework */,
 			);
 			name = Frameworks;
@@ -128,6 +138,8 @@
 		3F4A5862201B2AF800CE1787 /* Dagboksapp */ = {
 			isa = PBXGroup;
 			children = (
+				3FF5BC582036539B00F7E358 /* InfoPlist.strings */,
+				3FF5BC522036538E00F7E358 /* Localizable.strings */,
 				3FCED6BE2021E46100879372 /* Service */,
 				3F88E94F201F5FA0003ACB32 /* Resources */,
 				3F88E94E201F5C1F003ACB32 /* View */,
@@ -273,12 +285,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF5BC502036538E00F7E358 /* Localizable.strings in Resources */,
 				3F88E95D201F6002003ACB32 /* Roboto-Thin.ttf in Resources */,
 				3F88E964201F6002003ACB32 /* Roboto-LightItalic.ttf in Resources */,
 				3F88E962201F6002003ACB32 /* Roboto-Italic.ttf in Resources */,
 				3F4A586E201B2AF800CE1787 /* LaunchScreen.storyboard in Resources */,
 				3F88E967201F6002003ACB32 /* Roboto-MediumItalic.ttf in Resources */,
 				3F88E95F201F6002003ACB32 /* Roboto-Medium.ttf in Resources */,
+				3FF5BC562036539B00F7E358 /* InfoPlist.strings in Resources */,
 				3F88E960201F6002003ACB32 /* Roboto-ThinItalic.ttf in Resources */,
 				3F4A586B201B2AF800CE1787 /* Assets.xcassets in Resources */,
 				3F88E965201F6002003ACB32 /* Roboto-BlackItalic.ttf in Resources */,
@@ -383,6 +397,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3F4A5868201B2AF800CE1787 /* Base */,
+				3FF5BC592036539D00F7E358 /* sv */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -391,8 +406,25 @@
 			isa = PBXVariantGroup;
 			children = (
 				3F4A586D201B2AF800CE1787 /* Base */,
+				3FF5BC532036539500F7E358 /* sv */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3FF5BC522036538E00F7E358 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FF5BC512036538E00F7E358 /* sv */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		3FF5BC582036539B00F7E358 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FF5BC572036539B00F7E358 /* sv */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -512,6 +544,7 @@
 			baseConfigurationReference = 93F11EA02288B6D9E0975F13 /* Pods-Dagboksapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V72YN488QK;
 				ENABLE_BITCODE = NO;
@@ -520,9 +553,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Dagboksapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = se.mikaelelofsson.Dagboksapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -533,6 +567,7 @@
 			baseConfigurationReference = 19BEF81053AA3E866F4458B4 /* Pods-Dagboksapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V72YN488QK;
 				ENABLE_BITCODE = NO;
@@ -541,9 +576,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Dagboksapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = se.mikaelelofsson.Dagboksapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

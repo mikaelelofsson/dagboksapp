@@ -1,0 +1,6 @@
+/* (No Comment) */
+"NSCameraUsageDescription" = "För att ta ett foto behöver du ge åtkomst till kameran";
+
+/* (No Comment) */
+"NSMicrophoneUsageDescription" = "För att starta inspelningen behöver du ge åtkomst till mikrofonen";
+

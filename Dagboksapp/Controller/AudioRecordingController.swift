@@ -10,12 +10,13 @@ import UIKit
 import AVFoundation
 
 
-class AudioRecordingController: UIViewController, UINavigationControllerDelegate{
+class AudioRecordingController: UIViewController{
     
     var recordingName: String!
     
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer?
+    var didRecord: Bool = false
 
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
@@ -27,9 +28,8 @@ class AudioRecordingController: UIViewController, UINavigationControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        recordingName = "hejhej"
         navigationController?.delegate = self
+        
         configure()
 
         // Do any additional setup after loading the view.
@@ -50,16 +50,16 @@ class AudioRecordingController: UIViewController, UINavigationControllerDelegate
             
             alertMessage.addAction(UIAlertAction(title:"OK", style:.default, handler:nil))
             
-            present(alertMessage, animated:true, completion:nil)
+            present(alertMessage, animated:false, completion:nil)
             
             return
         }
         
         //set the audio file
         
-        recordingName = "recordingname"
-        
-        let audioFileURL = directoryURL.appendingPathComponent("MyAudioMemo.m4a")
+      
+        recordingName = String(NSDate().timeIntervalSince1970 * 1000)
+        let audioFileURL = directoryURL.appendingPathComponent(recordingName)
         
         //setup audio session
         let audioSession = AVAudioSession.sharedInstance()
@@ -150,10 +150,10 @@ class AudioRecordingController: UIViewController, UINavigationControllerDelegate
     
     //MARK: - Timer functions
     func startTimer() {
-//    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {(timer) in
-//        self.elapsedTimeInSecond += 1
-//        self.updateTimerLabel()
-//    })
+    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {(timer) in
+        self.elapsedTimeInSecond += 1
+        self.updateTimerLabel()
+    })
     }
     
     func pauseTimer(){
@@ -186,14 +186,17 @@ class AudioRecordingController: UIViewController, UINavigationControllerDelegate
         // Pass the selected object to the new view controller.
     }
     */
-extension AudioRecordingController: AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+extension AudioRecordingController: AVAudioRecorderDelegate, AVAudioPlayerDelegate{
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
-            let alertMessage = UIAlertController(title:"Finished recording", message: "Successfully recorded the audio", preferredStyle: .alert)
+            let alertMessage = UIAlertController(title:NSLocalizedString("Inspelningen är klar", comment: "recordingfinished"),
+                                                 message: NSLocalizedString("The recording is finished and saved", comment: "recordingsaved"), preferredStyle: .alert)
             
             alertMessage.addAction(UIAlertAction(title:"OK", style: .default, handler: nil))
             
             present(alertMessage, animated:true, completion:nil)
+            
+            didRecord = true
         }
     }
     
@@ -201,7 +204,8 @@ extension AudioRecordingController: AVAudioRecorderDelegate, AVAudioPlayerDelega
         playButton.isSelected = false
         resetTimer()
         
-        let alertMessage = UIAlertController(title:"Finish Playing", message:"Finish playing the recording", preferredStyle: .alert)
+        let alertMessage = UIAlertController(title:NSLocalizedString("Uppspelningen klar", comment: "finishedplay"),
+                                             message:NSLocalizedString("The recording played successfully", comment: "playedsuccess"), preferredStyle: .alert)
         alertMessage.addAction(UIAlertAction(title:"OK", style: .default, handler:nil))
         present(alertMessage, animated:true, completion:nil)
     }
@@ -221,10 +225,24 @@ extension AudioRecordingController: AVAudioRecorderDelegate, AVAudioPlayerDelega
             startTimer()
         }
     }
-    
+}
+extension AudioRecordingController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        
+        if didRecord {
         (viewController as? CreateEntryController)?.recordingName = self.recordingName
+        }
+        
+      
+        
     }
     
+    
+   
+    
 }
+    
+
+    
+
 

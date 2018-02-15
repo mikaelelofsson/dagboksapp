@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseCore
+import FirebaseStorage
 
 final class PostService {
     //Mark: -Properties
@@ -21,27 +22,77 @@ final class PostService {
     private init() {}
     
     let BASE_DB_REF: DatabaseReference = Database.database().reference()
-    
     let POST_DB_REF: DatabaseReference = Database.database().reference().child("entries")
+    let IMG_STORAGE_REF: StorageReference = Storage.storage().reference().child("photos")
     
     
     //MARK: -Firebase Upload and Download Methods
     
-    func uploadDiaryEntry(entryObject: DiaryEntry) -> Void {
+    
+    
+    func uploadDiaryEntry(entryObject: DiaryEntry, imageData: Data?, completionHandler: @escaping(Bool) -> Void) -> Void {
+        
+        var imageFileURL: String! = "saknas"
         
         let postDatabaseRef = POST_DB_REF.childByAutoId()
+        let imgStorageRef = IMG_STORAGE_REF.child("\(postDatabaseRef.key).jpg")
         
         formatter.dateFormat = "YYYY-MM-dd"
-//        let today = formatter.string(from: date)
-        let timestamp = Int(NSDate().timeIntervalSince1970 * 1000)
-        let entry: [String : Any] = ["entryText" : entryObject.entryText, "date" : timestamp]
+        //UPLOAD IMAGE
         
-        postDatabaseRef.setValue(entry)
+        let uploadMetadata = StorageMetadata()
+        uploadMetadata.contentType = "image/jpeg"
         
+        if imageData != nil {
+        let uploadTask = imgStorageRef.putData(imageData as Data!, metadata:uploadMetadata)
+            
+            uploadTask.observe(.success) { (snapshot) in
+                imageFileURL = snapshot.metadata?.downloadURL()?.absoluteString
+                
+                //        let today = formatter.string(from: date)
+                let timestamp = Int64(NSDate().timeIntervalSince1970 * 1000)
+                let entry: [String : Any] = ["entryText" : entryObject.entryText,
+                                             "timeStamp" : timestamp,
+                                             "recordingName" : entryObject.recordingName,
+                                             "date": entryObject.date,
+                                             "birdName" : entryObject.birdName,
+                                             "imageFileURL": imageFileURL,
+                                             "latitude": entryObject.locationLat,
+                                             "longitude":entryObject.locationLon]
+                
+                postDatabaseRef.setValue(entry)
+                completionHandler(true)
+            }
+            
+            uploadTask.observe(.progress) { (snapshot) in
+                
+                let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
+                print("Uploading... \(percentComplete)% complete")
+            }
+            
+            uploadTask.observe(.failure) { (snapshot) in
+                let alertMessage = UIAlertController(title: "Felmeddelande", message: "Någonting gick fel när inlägget skulle sparas. Var god försök igen om en stund", preferredStyle: .alert)
+                alertMessage.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            }
+            
+        } else {
+        
+            let timestamp = Int64(NSDate().timeIntervalSince1970 * 1000)
+            let entry: [String : Any] = ["entryText" : entryObject.entryText,
+                                         "timeStamp" : timestamp,
+                                         "recordingName" : entryObject.recordingName,
+                                         "date": entryObject.date,
+                                         "birdName" : entryObject.birdName,
+                                         "imageFileURL": imageFileURL,
+                                         "latitude": entryObject.locationLat,
+                                         "longitude":entryObject.locationLon]
+            postDatabaseRef.setValue(entry)
+            completionHandler(true)        }
     }
     
     func downloadLatestEntries(startTime startTimestamp: Int? = nil, limit: UInt, completionHandler: @escaping([DiaryEntry]) ->Void) {
         
+       
         //Create the query
         var postQuery = POST_DB_REF.queryOrdered(byChild: DiaryEntry.EntryKey.timeStamp)
         
@@ -65,6 +116,7 @@ final class PostService {
             
             if let post = DiaryEntry(postId: item.key, postInfo: postData){
                 newEntries.append(post)
+                print(post.imageURL)
             }
         }
         
@@ -77,14 +129,7 @@ final class PostService {
        completionHandler(newEntries)
             })
         }
-    
-//    func saveToGlobalEntryArray(entryObject: DiaryEntry){
-//
-//        if PostService.globalEntryArray==nil{
-//            PostService.globalEntryArray = [DiaryEntry]()
-//        }
-//        PostService.globalEntryArray.append(entryObject)
-//    }
+
     
      func getOldEntries(startTime startTimestamp: Int, limit: UInt, completionHandler: @escaping([DiaryEntry]) ->Void) {
     

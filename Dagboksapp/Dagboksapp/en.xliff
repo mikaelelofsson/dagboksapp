@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="Dagboksapp/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.2" build-num="9C40b"/>
+    </header>
+    <body/>
+  </file>
+  <file original="Dagboksapp/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.2" build-num="9C40b"/>
+    </header>
+    <body>
+      <trans-unit id="42Y-46-xWt.normalTitle">
+        <source>X</source>
+        <note>Class = "UIButton"; normalTitle = "X"; ObjectID = "42Y-46-xWt";</note>
+      </trans-unit>
+      <trans-unit id="Auf-gn-Vye.text">
+        <source>date</source>
+        <note>Class = "UILabel"; text = "date"; ObjectID = "Auf-gn-Vye";</note>
+      </trans-unit>
+      <trans-unit id="BD9-p3-4xh.text">
+        <source>00:00</source>
+        <note>Class = "UILabel"; text = "00:00"; ObjectID = "BD9-p3-4xh";</note>
+      </trans-unit>
+      <trans-unit id="FlQ-jC-mT8.text">
+        <source>day</source>
+        <note>Class = "UILabel"; text = "day"; ObjectID = "FlQ-jC-mT8";</note>
+      </trans-unit>
+      <trans-unit id="Mbj-HU-aQf.text">
+        <source>month</source>
+        <note>Class = "UILabel"; text = "month"; ObjectID = "Mbj-HU-aQf";</note>
+      </trans-unit>
+      <trans-unit id="O7P-VY-VFw.title">
+        <source> </source>
+        <note>Class = "UIBarButtonItem"; title = " "; ObjectID = "O7P-VY-VFw";</note>
+      </trans-unit>
+      <trans-unit id="Qpq-IZ-VE1.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "Qpq-IZ-VE1";</note>
+      </trans-unit>
+      <trans-unit id="Sld-m4-f0D.text">
+        <source>Entryname</source>
+        <note>Class = "UILabel"; text = "Entryname"; ObjectID = "Sld-m4-f0D";</note>
+      </trans-unit>
+      <trans-unit id="VY2-Ib-WqX.placeholder">
+        <source>Name of the bird</source>
+        <note>Class = "UITextField"; placeholder = "Name of the bird"; ObjectID = "VY2-Ib-WqX";</note>
+      </trans-unit>
+      <trans-unit id="WhN-64-cyP.text">
+        <source>EntryText</source>
+        <note>Class = "UILabel"; text = "EntryText"; ObjectID = "WhN-64-cyP";</note>
+      </trans-unit>
+      <trans-unit id="Zch-f4-IFp.accessibilityHint">
+        <source>Write here</source>
+        <note>Class = "UITextView"; accessibilityHint = "Skriv här"; ObjectID = "Zch-f4-IFp";</note>
+      </trans-unit>
+      <trans-unit id="eaL-Zn-00k.text">
+        <source>Preview</source>
+        <note>Class = "UILabel"; text = "Preview"; ObjectID = "eaL-Zn-00k";</note>
+      </trans-unit>
+      <trans-unit id="mO0-xT-IyV.title">
+        <source>Spara</source>
+        <note>Class = "UIBarButtonItem"; title = "Spara"; ObjectID = "mO0-xT-IyV";</note>
+      </trans-unit>
+      <trans-unit id="oPK-YH-WEn.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "oPK-YH-WEn";</note>
+      </trans-unit>
+      <trans-unit id="pgq-ZI-C52.title">
+        <source> </source>
+        <note>Class = "UIBarButtonItem"; title = " "; ObjectID = "pgq-ZI-C52";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Dagboksapp/Info.plist" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.2" build-num="9C40b"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="NSCameraUsageDescription">
+        <source>To take a photo we need access to your camera</source>
+      </trans-unit>
+      <trans-unit id="NSLocationWhenInUseUsageDescription">
+        <source>To see position we need access to your location</source>
+      </trans-unit>
+      <trans-unit id="NSMicrophoneUsageDescription">
+        <source>To start recording we need access to your microphone</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Dagboksapp/Localizable.strings" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.2" build-num="9C40b"/>
+    </header>
+    <body>
+      <trans-unit id="Du måste ange ett namn på fågeln">
+        <source>You need to give the bird a name</source>
+        <note>birdNeedsName</note>
+      </trans-unit>
+      <trans-unit id="Ett ögonblick">
+        <source>Just a moment</source>
+        <note>justamoment</note>
+      </trans-unit>
+      <trans-unit id="Fel">
+        <source>Error</source>
+        <note>error</note>
+      </trans-unit>
+      <trans-unit id="Inspelningen är klar">
+        <source>The recording is finished</source>
+        <note>recordingfinished</note>
+      </trans-unit>
+      <trans-unit id="Lägg till fågel">
+        <source>Add new bird</source>
+        <note>createEntryTitle</note>
+      </trans-unit>
+      <trans-unit id="Min fågelsamling">
+        <source>Myh bird collection</source>
+        <note>tableViewTitle</note>
+      </trans-unit>
+      <trans-unit id="Spara">
+        <source>Save</source>
+        <note>saveButton</note>
+      </trans-unit>
+      <trans-unit id="Sparar inlägget...">
+        <source>Saving the entry...</source>
+        <note>saving</note>
+      </trans-unit>
+      <trans-unit id="The recording is finished and saved">
+        <source>The recording is finished and saved</source>
+        <note>recordingsaved</note>
+      </trans-unit>
+      <trans-unit id="The recording played successfully">
+        <source>The recording played successfully</source>
+        <note>playedsuccess</note>
+      </trans-unit>
+      <trans-unit id="Uppspelningen klar">
+        <source>Playing finished</source>
+        <note>finishedplay</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

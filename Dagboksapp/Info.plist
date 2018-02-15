@@ -38,6 +38,8 @@
 	<string></string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>To start recording we need access to your microphone</string>
+	<key>NSCameraUsageDescription</key>
+	<string>To take a photo we need access to your camera</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -45,5 +47,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To see position we need access to your location</string>
 </dict>
 </plist>

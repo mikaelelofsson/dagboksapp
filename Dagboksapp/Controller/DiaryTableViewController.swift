@@ -8,24 +8,54 @@
 
 import UIKit
 
-class DiaryTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DiaryTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchResultsUpdating {
+    
+    
+    
 
+    @IBOutlet weak var addedNavigationItem: UINavigationItem! {
+        didSet {
+            navigationItem.title = NSLocalizedString("Min fågelsamling", comment: "tableViewTitle")
+
+        }
+    }
     @IBOutlet var diaryTableView: UITableView!
     var diaryEntriesFeed = [DiaryEntry]()
     fileprivate var isLoadingEntries = false
     
+    var searchController: UISearchController!
+    
+    @IBOutlet var addEntryButton: UIButton! {
+        didSet {
+            addEntryButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+            addEntryButton.layer.shadowOffset = CGSize(width: 0, height: 3)
+            addEntryButton.layer.shadowOpacity = 2.0
+            addEntryButton.layer.shadowRadius = 10.0
+            addEntryButton.layer.masksToBounds = false}
+    }
+    
     //Created for testing
     
+    
+    var searchResults: [DiaryEntry] = []
     
     // MARK: - View Controller Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let addButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchAction(_:)))
+        navigationItem.rightBarButtonItem = addButton
+        
         diaryTableView.delegate = self
         diaryTableView.dataSource = self
+        searchController = UISearchController(searchResultsController: nil)
         
+    
         
+        self.searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -33,8 +63,57 @@ class DiaryTableViewController: UIViewController, UITableViewDelegate, UITableVi
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    @IBAction func searchAction(_ sender: Any) {
+        
+        //        self.navigationItem.searchController = searchController
+        
+        // Set any properties (in this case, don't hide the nav bar and don't show the emoji keyboard option)
+        searchController.hidesNavigationBarDuringPresentation = false
+        
+        
+        
+        // Make this class the delegate and present the search
+         searchController.searchBar.keyboardType = UIKeyboardType.asciiCapable
+        present(searchController, animated: true, completion: nil)
+        
+       
+        
+    }
+    
+    func filterContent(for searchText: String) {
+        searchResults = diaryEntriesFeed.filter({ (DiaryEntry) -> Bool in
+            if let name = DiaryEntry.birdName
+            {
+                let isMatch = name.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
+            
+            return false
+        })
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            diaryTableView.reloadData()
+        }
+    }
+    
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
         loadRecentEntries()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        searchController.isActive = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let imageView = UIImageView(image:#imageLiteral(resourceName: "mainbackground"))
+        imageView.contentMode = .scaleAspectFill
+        diaryTableView.backgroundView = imageView
+      diaryTableView.backgroundView?.layer.opacity = 0.5
     }
     
     fileprivate func loadRecentEntries() {
@@ -72,7 +151,18 @@ class DiaryTableViewController: UIViewController, UITableViewDelegate, UITableVi
             
     }
     
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController != nil {
+            if searchController.isActive {
+                return searchResults.count
+            }
+            else {
+                return diaryEntriesFeed.count
+            }
+        } else {
+            return diaryEntriesFeed.count
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -85,22 +175,34 @@ class DiaryTableViewController: UIViewController, UITableViewDelegate, UITableVi
         // #warning Incomplete implementation, return the number of sections
         return 1    }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+   // func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
 
-        return diaryEntriesFeed.count
-    }
+     //   return diaryEntriesFeed.count
+   // }
 
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DiaryTableViewCell
 
+        if searchController != nil{
+        let singleEntry = (searchController.isActive) ? searchResults[indexPath.row] : diaryEntriesFeed[indexPath.row]
+            
+            cell.configure(entry: diaryEntriesFeed[indexPath.row])
+            
+            cell.previewLabel.text = singleEntry.date
+            cell.entryLabel.text = singleEntry.birdName
+            
+        }
         // Configure the cell...
-        cell.entryLabel.text = String(diaryEntriesFeed[indexPath.row].timeStamp)
-        cell.thumbnailImageView.image = UIImage(named:"restaurant")
-        cell.previewLabel.text = diaryEntriesFeed[indexPath.row].entryText
-
+        
+        
+        
+        
+        
+        
+        
         return cell
     }
     
@@ -117,6 +219,11 @@ class DiaryTableViewController: UIViewController, UITableViewDelegate, UITableVi
             isLoadingEntries = false
             return
         }
+        
+        
+        
+        
+        
         
         PostService.shared.getOldEntries(startTime: lastEntryTimestamp, limit: 3) { (newEntries) in
             
@@ -170,7 +277,9 @@ class DiaryTableViewController: UIViewController, UITableViewDelegate, UITableVi
         if segue.identifier == "showDiaryDetail" {
             if let indexPath  = diaryTableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! DetailViewController
-                destinationController.diaryEntry = diaryEntriesFeed[indexPath.row]
+               // destinationController.diaryEntry = diaryEntriesFeed[indexPath.row]
+                destinationController.diaryEntry = (searchController.isActive) ? searchResults[indexPath.row] : diaryEntriesFeed[indexPath.row]
+                
             }
         }
     }
@@ -224,4 +333,7 @@ class DiaryTableViewController: UIViewController, UITableViewDelegate, UITableVi
         return true
     }
     
+    @IBAction func goBackMainController(seque:UIStoryboardSegue) {
+        //Denna funktionen gör det möjligt att återvända från andra vyer till denna vy
+    }
 }

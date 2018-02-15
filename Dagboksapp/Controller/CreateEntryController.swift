@@ -8,15 +8,50 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
-class CreateEntryController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class CreateEntryController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, CLLocationManagerDelegate {
     
-    var recordingName: String!
+    
+    @IBOutlet weak var saveEntryButton: UIBarButtonItem!{
+        didSet {
+            navigationItem.title = NSLocalizedString("Spara", comment: "saveButton")
+            
+        }
+    }
+    @IBOutlet weak var addedNavigationItem: UINavigationItem! {
+        didSet {
+            navigationItem.title = NSLocalizedString("Lägg till fågel", comment: "createEntryTitle")
+            
+        }
+    }
+    @IBOutlet weak var audioButton: UIButton! {
+        didSet {
+            audioButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6).cgColor
+            audioButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+            audioButton.layer.shadowOpacity = 0.5
+            audioButton.layer.shadowRadius = 4
+            audioButton.layer.masksToBounds = false
+        }
+    }
+    @IBOutlet weak var cameraButton: UIButton! {
+        didSet {
+            cameraButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6).cgColor
+            cameraButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+            cameraButton.layer.shadowOpacity = 0.5
+            cameraButton.layer.shadowRadius = 4
+            cameraButton.layer.masksToBounds = false
+        }
+    }
+    
+    @IBOutlet weak var birdNameView: UITextField!
+    var recordingName: String = "saknas"
     @IBOutlet weak var dayName: UILabel!
-
+    var imageURL: String = "saknas"
     @IBOutlet weak var month: UILabel!
     @IBOutlet weak var day: UILabel!
     @IBOutlet weak var entryTextView: UITextView!
+    
         {
         didSet {
             entryTextView.layer.cornerRadius = 6
@@ -24,10 +59,12 @@ class CreateEntryController: UIViewController, UIImagePickerControllerDelegate,U
             entryTextView.layer.borderWidth = 0.5
             entryTextView.layer.borderColor = UIColor.lightGray.cgColor
         }
+    
     }
+    var dateText:String?
+     let manager = CLLocationManager()
     
-    
-    var imageData: Data!
+    var imageData: Data! = nil
     var imagePicker = UIImagePickerController()
     
     @IBOutlet weak var year: UILabel!
@@ -36,9 +73,20 @@ class CreateEntryController: UIViewController, UIImagePickerControllerDelegate,U
     let formatter = DateFormatter()
     var diaryEntryObject: DiaryEntry!
     
+    var locationLat: Double = 0.0
+    var locationLon: Double = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
+        imagePicker.delegate = self
         formatter.dateFormat = "dd"
         day.text = formatter.string(from: date)
         formatter.dateFormat = "EEEE"
@@ -51,12 +99,9 @@ class CreateEntryController: UIViewController, UIImagePickerControllerDelegate,U
         month.text = "\(monthTxt) \(yearTxt)"
         
         
+        
+        
         // Do any additional setup after loading the view.
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        entryTextView.text = recordingName
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,13 +110,57 @@ class CreateEntryController: UIViewController, UIImagePickerControllerDelegate,U
     }
     
     
-
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        locationLat = Double(location.coordinate.latitude)
+        locationLon = Double(location.coordinate.longitude)
+    }
+    
     @IBAction func saveEntryBtn(_ sender: Any) {
+        
+        if !birdNameView.hasText {
+            let uploadingMessage = UIAlertController(title: NSLocalizedString("Fel", comment: "error"),
+                                                     message: NSLocalizedString("Du måste ange ett namn på fågeln", comment: "birdNeedsName"),
+                                                     preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            uploadingMessage.addAction(action)
+            present(uploadingMessage, animated:true)
+            
+        } else {
+        
+        let uploadingMessage = UIAlertController(title: NSLocalizedString("Ett ögonblick", comment: "justamoment"),
+                                                 message: NSLocalizedString("Sparar inlägget...", comment: "saving"), preferredStyle: .alert)
+        present(uploadingMessage, animated:true)
+        
         diaryEntryObject = DiaryEntry()!
         diaryEntryObject.entryText = entryTextView.text
+        diaryEntryObject.recordingName = recordingName
+        diaryEntryObject.birdName = birdNameView.text!
+        formatter.dateFormat = "dd-MMMM-YYYY"
+        diaryEntryObject.date = formatter.string(from: date)
+        diaryEntryObject.locationLon = locationLon
+        diaryEntryObject.locationLat = locationLat
         
-        PostService.shared.uploadDiaryEntry(entryObject: diaryEntryObject)
+        
+        
+        PostService.shared.uploadDiaryEntry(entryObject: diaryEntryObject, imageData: imageData) {(doneUploading) in
+            if doneUploading {
+                self.dismiss(animated: true) {
+                   
+                    self.performSegue(withIdentifier: "goBackToTableView", sender: self)
+                }
+                
+            }
+            
+        }
+        }
+        
+        
     }
+    
+    
+
+    
     
     @IBAction func openAudioRecorder(_ sender: Any) {
         performSegue(withIdentifier: "audioRecordingSegue", sender: self)
@@ -80,8 +169,8 @@ class CreateEntryController: UIViewController, UIImagePickerControllerDelegate,U
         
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 imagePicker = UIImagePickerController()
-                imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
                 imagePicker.sourceType = .camera;
+                imagePicker.delegate = self
                 imagePicker.allowsEditing = true
                 self.present(imagePicker, animated: true, completion: nil)
             } else {
@@ -89,14 +178,18 @@ class CreateEntryController: UIViewController, UIImagePickerControllerDelegate,U
         
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated:true, completion:nil)
+        self.present(imagePicker, animated:true, completion:nil)
     }
     }
+
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "audioRecordingSegue" {
             let destination = segue.destination as! AudioRecordingController
-           destination.recordingName = recordingName
+            destination.recordingName = recordingName
         }
+    
+
         
         
     /*
